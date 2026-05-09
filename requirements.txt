@@ -1,3 +1,22 @@
+# Web API
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+websockets>=12.0
+
+# Core video processing
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+moviepy>=1.0.3
+ffmpeg-python>=0.2.0
+
+# Whisper for subtitles
+openai-whisper>=20231117
+
+# Translation (optional)
+deep_translator>=1.11.0
+
+# Original dependencies
 requests
 playwright
 eventlet
@@ -11,14 +30,9 @@ apscheduler
 f2
 pywin32
 ruamel.yaml
-opencv-python
-ffmpeg-python
 opencc-python-reimplemented
-numpy
 pysrt
-openai-whisper
 pydub
-Pillow
 watchdog
 pyyaml
 psutil
