@@ -12,8 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Push to Railway
-        uses: railway-deploy-action@v1
-        with:
-          railway_token: ${{ secrets.RAILWAY_TOKEN }}
-          service: video-mover
+      - name: Deploy to Railway
+        run: |
+          curl -X POST https://railway.app/api/v1/projects/${{ secrets.RAILWAY_PROJECT_ID }}/services \
+            -H "Authorization: Bearer ${{ secrets.RAILWAY_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"service":{"name":"video-mover","repo":"github.com/ranya199408-glitch/video-mover"}}'
